@@ -12,8 +12,8 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 		
 		<title>AVF 1312 Demo</title>
-		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
 	</head>
 
 	<body>	
@@ -24,75 +24,26 @@
 			
 			<article class="content-primary"> <!-- Content -->
 				<h2>Native Features</h2>
-				<ul data-role="listview" id="nativeFeaturesList">
-					<li>
-						<a href="#" data-ajax="false">
-							<img src="img/camera.png" />
-							<h3>Camera</h3>
-							<p>Camera</p>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<img src="img/accelerometer.png" />
-							<h3>Accelerometer</h3>
-							<p>Accelerometer</p>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<img src="img/compass.png" />
-							<h3>Compass</h3>
-							<p>Compass</p>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<img src="img/geolocation.png" />
-							<h3>Geolocation</h3>
-							<p>Getlocation</p>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<img src="img/contacts.png" />
-							<h3>Contacts</h3>
-							<p>Contacts</p>
-						</a>
-					</li>
+				<ul data-role="listview" class="ulWidth" id="nativeFeaturesList">
+					<li><a href="#" data-ajax="false"><img src="img/camera.png" /><h3>Camera</h3></a></li>
+					<li><a href="#" data-ajax="false"><img src="img/accelerometer.png" /><h3>Accelerometer</h3></a></li>
+					<li><a href="#" data-ajax="false"><img src="img/compass.png" /><h3>Compass</h3></a></li>
+					<li><a href="#" data-ajax="false"><img src="img/geolocation.png" /><h3>Geolocation</h3></a></li>
+					<li><a href="#" data-ajax="false"><img src="img/contacts.png" /><h3>Contacts</h3></a></li>
 				</ul>
 				
 				<h2>APIs</h2>
-				<ul data-role="listview" id="apisList">
-					<li>
-						<a href="instagram.html" data-ajax="false">
-							<h3>Instagram</h3>
-						</a>
-					</li>
-					<li>
-						<a href="food2fork.html" data-ajax="false">
-							<h3>GoogleMaps</h3>
-						</a>
-					</li>
+				
+				<ul data-role="listview" class="ulWidth" id="apisList">
+					<li><a href="#pageInstagram" data-ajax="false"><h3>Instagram</h3></a></li>
+					<li><a href="#pageFood2Fork" data-ajax="false"><h3>Food Recipes</h3></a></li>
 				</ul>
 
 				<h2>Research</h2>
-				<ul data-role="listview" id="researchList">
-					<li>
-						<a href="#" data-ajax="false">
-							<h3>Week Two</h3>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<h3>Week Three</h3>
-						</a>
-					</li>
-					<li>
-						<a href="#" data-ajax="false">
-							<h3>Week Four</h3>	
-						</a>
-					</li>
+				<ul data-role="listview" class="ulWidth" id="researchList">
+					<li><a href="#" data-ajax="false"><h3>Week Two</h3></a></li>
+					<li><a href="#" data-ajax="false"><h3>Week Three</h3></a></li>
+					<li><a href="#" data-ajax="false"><h3>Week Four</h3></a></li>
 				</ul>
 
 				
@@ -106,11 +57,49 @@
 				</nav><!-- /navbar -->
 			</footer><!-- /footer -->
 		</section>	<!-- /Main page -->	
+		
+		<section data-role="page" id="pageInstagram">  <!-- Instagram page -->
+			<header data-role="header" data-position="fixed" data-back-button="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
 			
+			<article class="content"> <!-- Content -->
+				<h2 id="data-message"></h2>
+				<ul data-role="listview" id="instagramResults">
+				</ul>
+			</article> <!-- /Content -->
+			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /InstaGram page -->		
+			
+		<section data-role="page" id="pageFood2Fork">  <!-- Food2Fork page -->
+			<header data-role="header" data-position="fixed" data-back-button="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			
+			<article class="content-primary"> <!-- Content -->
+				<h2 id="data-message"></h2>
+				<ul data-role="listview" id="food2ForkResults">
+				</ul>
+			</article> <!-- /Content -->
+			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /Food2Fork page -->
 		
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
-	<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>	
 	<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
