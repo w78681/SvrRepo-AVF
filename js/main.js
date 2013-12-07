@@ -21,12 +21,13 @@ $(function() {
 });
 
 var foodData = function(foodInfo) {
-	console.log(foodInfo);	
+	var serial = JSON.stringify(foodInfo);
+	console.log(serial);	
 
 	$("#recipe-message").html("Recipe results:");
 	
 	$.each(foodInfo.recipes, function (index, food) {
-	var recipeStuff = "<li>" + food.title + "</li>";
+	var recipeStuff = "<li>" + food.title + "</li><br><li><img src='" + food.image_url + "' alt='" + food.title + "' /></li>";
 	$("#food2ForkResults").append(recipeStuff);
 	});
 };
