@@ -20,34 +20,27 @@
 		<section data-role="page" id="pageMain">  <!-- Main page -->
 			<header data-role="header" data-position="fixed" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
-			</header>  <!-- /HeaderBar|Navigation -->
-			
+			</header>  <!-- /HeaderBar|Navigation -->	
 			<article class="content-primary"> <!-- Content -->
 				<h2 class="h2Space">Native Features</h2>
 				<ul data-role="listview" class="ulWidth" id="nativeFeaturesList">
-					<li><a href="#" data-ajax="false"><img src="img/camera.png" alt="Camera" /><h3>Camera</h3></a></li>
-					<li><a href="#" data-ajax="false"><img src="img/accelerometer.png" alt="Accelerometer" /><h3>Accelerometer</h3></a></li>
-					<li><a href="#" data-ajax="false"><img src="img/compass.png" alt="Compass" /><h3>Compass</h3></a></li>
-					<li><a href="#" data-ajax="false"><img src="img/geolocation.png" alt="Geolocation" /><h3>Geolocation</h3></a></li>
-				</ul>
-				
+					<li><a href="#pageCamera" data-ajax="false"><img src="img/camera.png" alt="Camera" /><h3>Camera</h3></a></li>
+					<li><a href="#pageAcceleration" data-ajax="false"><img src="img/accelerometer.png" alt="Accelerometer" /><h3>Accelerometer</h3></a></li>
+					<li><a href="#pageCompass" data-ajax="false"><img src="img/compass.png" alt="Compass" /><h3>Compass</h3></a></li>
+					<li><a href="#pageGeolocation" data-ajax="false"><img src="img/geolocation.png" alt="Geolocation" /><h3>Geolocation</h3></a></li>
+				</ul>				
 				<h2 class="h2Space">APIs</h2>
-				
 				<ul data-role="listview" class="ulWidth" id="apisList">
 					<li><a href="#pageInstagram" data-ajax="false"><h3>Instagram</h3></a></li>
 					<li><a href="#pageFood2Fork" data-ajax="false"><h3>Food Recipes</h3></a></li>
 				</ul>
-
 				<h2 class="h2Space">Research</h2>
 				<ul data-role="listview" class="ulWidth" id="researchList">
 					<li><a href="#pageResearchOne" data-ajax="false"><h3>Week Two</h3></a></li>
 					<li><a href="#pageResearchTwo" data-ajax="false"><h3>Week Three</h3></a></li>
 					<li><a href="#test" data-ajax="false"><h3>Week Four</h3></a></li>
 				</ul>
-
-				
 			</article> <!-- /Content -->
-			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
 				<nav data-role="navbar">
 					<ul>
@@ -56,20 +49,100 @@
 				</nav><!-- /navbar -->
 			</footer><!-- /footer -->
 		</section>	<!-- /Main page -->	
+
+		<section data-role="page" id="pageCamera">  <!-- Camera page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Camera</h2>
+				<div>
+					<img src= "" id="cameraPicture" />
+					<ul class="ulWidth" id="cameraResults">		
+								
+					</ul>					
+				</div>
+			</article> <!-- /Content -->			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /Camera page page -->
+
+		<section data-role="page" id="pageAcceleration">  <!-- Acceleration page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Acceleration</h2>
+				<div>
+					<ul class="ulWidth" id="accelerationResults">					
+					</ul>
+				</div>
+			</article> <!-- /Content -->
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /Acceleration page page -->
+			
+		<section data-role="page" id="pageCompass">  <!-- Compass page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Compass</h2>
+				<div>
+					<ul class="ulWidth" id="compassResults">					
+					</ul>
+				</div>
+			</article> <!-- /Content -->
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /Compass page page -->
+
+		<section data-role="page" id="pageGeolocation">  <!-- Geolocation page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Geolocation</h2>
+				<div>
+					<ul class="ulWidth" id="geolocationResults">					
+					</ul>
+				</div>
+			</article> <!-- /Content -->
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /Geolocation page page -->
 		
 		<section data-role="page" id="pageInstagram">  <!-- Instagram page -->
 			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
-			</header>  <!-- /HeaderBar|Navigation -->
-			
+			</header>  <!-- /HeaderBar|Navigation -->			
 			<article class="content"> <!-- Content -->
 				<h2 class="h2Width" id="instagram-message"></h2>
 				<div class="instagramGrid">
 					<ul class="ulWidth" id="instagramResults">					
 					</ul>
 				</div>
-			</article> <!-- /Content -->
-			
+			</article> <!-- /Content -->			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
 				<nav data-role="navbar">
 					<ul>
@@ -83,15 +156,13 @@
 			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
 			</header>  <!-- /HeaderBar|Navigation -->
-			
 			<article class="content-primary"> <!-- Content -->
 				<h2 class="h2Width" id="recipe-message"></h2>
 				<div class="">
 					<ul class="ulWidth" id="food2ForkResults">
 					</ul>
 				</div>
-			</article> <!-- /Content -->
-			
+			</article> <!-- /Content -->			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
 				<nav data-role="navbar">
 					<ul>
@@ -104,15 +175,13 @@
 		<section data-role="page" id="pageResearchOne">  <!-- Research page -->
 			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
-			</header>  <!-- /HeaderBar|Navigation -->
-			
+			</header>  <!-- /HeaderBar|Navigation -->			
 			<article class="content-primary"> <!-- Content -->
 				<h2 class="h2Width">Research One</h2>
 				<ul data-role="listview" class="ulWidth">
 					<li><p>1. Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?<br>Signing up for yet another username/password combo on X.com website is the norm in todays Internet.  Twitter and Facebook, social media in general, have been pushing for a one-login system over the past couple of years.  Popular websites will have “Signin with Twitter/Facebook” buttons embedded on login pages.  Not only does this cut down on remember yet another username/password, but it can create an new accounts from scratch as the information has already been stored for use by the social media of your choice.  With the same scenario for use of payments or online shopping, can enable a service to serve downloadable content such as TV shows or music for a broad audience while still being compliant with today’s copywrite laws.<br><br>2. Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?<br>JSON-P allows for cross-domain information requests.<br><br>3. Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?<br>Using Google Maps API with a phone’s GPS can make life dramatically easier for a delivery service of all types.  To include using the native camera to a degree of scanning barcodes with the GPS can solve a proof of delivery concept.<br><br>4. Please describe any design and functionality intentions you may have for your Demo app components this month.<br>I would like to use GPS and camera for a “Rate-the-plate” type app, maybe using APIs from Yelp.com for restaurants decisions.  Of course, I say all this without knowing the ins and outs of APIs so that may change!<br><br>5. Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.<br>Researching trends or implementation of intensions is a very easy thing to do.  Keyword searches or articles and how-to’s litter todays Internet.  Design on the other hand is where I fall prey to as I lack the creative gland that others may have.  I usually go with simple is better, focusing on a minimalistic as possible as to not over complicate anything.  And development is 50/50 of snags when doing something new.  With a combination of past experiences and how well resources I found in my research phase, with the intent I have.  So far FullSail has enabled me to slowly but surely develop the self-discipline needed to make things rattling in my head a reality.</p></li>
 				</ul>
-			</article> <!-- /Content -->
-			
+			</article> <!-- /Content -->			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
 				<nav data-role="navbar">
 					<ul>
@@ -142,35 +211,9 @@
 			</footer><!-- /footer -->
 		</section>	<!-- /research page -->
 	
-
-	
-		
-		<section data-role="page" id="test">  <!-- test page -->
-			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
-				<h1>AVF 1312 Project</h1>
-			</header>  <!-- /HeaderBar|Navigation -->
-			<article class="content-primary"> <!-- Content -->
-				<h2 class="h2Width" id="recipe-message">Test Stuff</h2>
-				<div class="instagramGrid">
-					<div>
-						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
-						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
-						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
-					</div>
-				</div>
-			</article> <!-- /Content -->
-			
-			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
-					</ul>
-				</nav><!-- /navbar -->
-			</footer><!-- /footer -->
-		</section>	<!-- /test page page -->
-		
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>	
 	<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
