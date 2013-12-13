@@ -29,7 +29,6 @@
 					<li><a href="#" data-ajax="false"><img src="img/accelerometer.png" alt="Accelerometer" /><h3>Accelerometer</h3></a></li>
 					<li><a href="#" data-ajax="false"><img src="img/compass.png" alt="Compass" /><h3>Compass</h3></a></li>
 					<li><a href="#" data-ajax="false"><img src="img/geolocation.png" alt="Geolocation" /><h3>Geolocation</h3></a></li>
-					<li><a href="#" data-ajax="false"><img src="img/contacts.png" alt="Contacts" /><h3>Contacts</h3></a></li>
 				</ul>
 				
 				<h2 class="h2Space">APIs</h2>
@@ -41,9 +40,9 @@
 
 				<h2 class="h2Space">Research</h2>
 				<ul data-role="listview" class="ulWidth" id="researchList">
-					<li><a href="#" data-ajax="false"><h3>Week Two</h3></a></li>
-					<li><a href="#" data-ajax="false"><h3>Week Three</h3></a></li>
-					<li><a href="#" data-ajax="false"><h3>Week Four</h3></a></li>
+					<li><a href="#pageResearchOne" data-ajax="false"><h3>Week Two</h3></a></li>
+					<li><a href="#pageResearchTwo" data-ajax="false"><h3>Week Three</h3></a></li>
+					<li><a href="#test" data-ajax="false"><h3>Week Four</h3></a></li>
 				</ul>
 
 				
@@ -59,14 +58,16 @@
 		</section>	<!-- /Main page -->	
 		
 		<section data-role="page" id="pageInstagram">  <!-- Instagram page -->
-			<header data-role="header" data-position="fixed" data-back-button="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
 			</header>  <!-- /HeaderBar|Navigation -->
 			
 			<article class="content"> <!-- Content -->
 				<h2 class="h2Width" id="instagram-message"></h2>
-				<ul data-role="listview" class="ulWidth" id="instagramResults">
-				</ul>
+				<div class="instagramGrid">
+					<ul class="ulWidth" id="instagramResults">					
+					</ul>
+				</div>
 			</article> <!-- /Content -->
 			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
@@ -79,14 +80,16 @@
 		</section>	<!-- /InstaGram page -->		
 			
 		<section data-role="page" id="pageFood2Fork">  <!-- Food2Fork page -->
-			<header data-role="header" data-position="fixed" data-back-button="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
 			</header>  <!-- /HeaderBar|Navigation -->
 			
 			<article class="content-primary"> <!-- Content -->
 				<h2 class="h2Width" id="recipe-message"></h2>
-				<ul data-role="listview" class="ulWidth" id="food2ForkResults">
-				</ul>
+				<div class="">
+					<ul class="ulWidth" id="food2ForkResults">
+					</ul>
+				</div>
 			</article> <!-- /Content -->
 			
 			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
@@ -97,6 +100,74 @@
 				</nav><!-- /navbar -->
 			</footer><!-- /footer -->
 		</section>	<!-- /Food2Fork page -->
+		
+		<section data-role="page" id="pageResearchOne">  <!-- Research page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Research One</h2>
+				<ul data-role="listview" class="ulWidth">
+					<li><p>1. Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?<br>Signing up for yet another username/password combo on X.com website is the norm in todays Internet.  Twitter and Facebook, social media in general, have been pushing for a one-login system over the past couple of years.  Popular websites will have “Signin with Twitter/Facebook” buttons embedded on login pages.  Not only does this cut down on remember yet another username/password, but it can create an new accounts from scratch as the information has already been stored for use by the social media of your choice.  With the same scenario for use of payments or online shopping, can enable a service to serve downloadable content such as TV shows or music for a broad audience while still being compliant with today’s copywrite laws.<br><br>2. Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?<br>JSON-P allows for cross-domain information requests.<br><br>3. Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?<br>Using Google Maps API with a phone’s GPS can make life dramatically easier for a delivery service of all types.  To include using the native camera to a degree of scanning barcodes with the GPS can solve a proof of delivery concept.<br><br>4. Please describe any design and functionality intentions you may have for your Demo app components this month.<br>I would like to use GPS and camera for a “Rate-the-plate” type app, maybe using APIs from Yelp.com for restaurants decisions.  Of course, I say all this without knowing the ins and outs of APIs so that may change!<br><br>5. Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.<br>Researching trends or implementation of intensions is a very easy thing to do.  Keyword searches or articles and how-to’s litter todays Internet.  Design on the other hand is where I fall prey to as I lack the creative gland that others may have.  I usually go with simple is better, focusing on a minimalistic as possible as to not over complicate anything.  And development is 50/50 of snags when doing something new.  With a combination of past experiences and how well resources I found in my research phase, with the intent I have.  So far FullSail has enabled me to slowly but surely develop the self-discipline needed to make things rattling in my head a reality.</p></li>
+				</ul>
+			</article> <!-- /Content -->
+			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /research page -->
+		<section data-role="page" id="pageResearchTwo">  <!-- Research page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width">Research Two</h2>
+				<ul data-role="listview" class="ulWidth">
+					<li><p>1. What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)<br>While the web development strategies and application development for mobile devices using those skills, I was very guilty of bare minimum when creating.  Like not using my alt tags on my pictures.  Instead of links on mobile devices, you tend to rely more so on buttons.  I will defiantly make use of the “alt” tag on my icons and pictures in order to better facilitate accessibility features.<br><br>2. Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?<br>Computers were definitely not created with accessibility in mind from the start.  Using screen readers try their best to assist with it, but often times it falls short.  This is our fault as developers also; anticipating how to design for disabled or blind users for example can be a rather tricky thing.  Especially since its hard to judge how he/she reactions to everyday situation is unknown to someone that isn’t themselves disabled.  Using a combination of screen reader with voice dictation and a program, kind of like IOS’s Siri, that can virtual assist you to find what you need would be a good fit.<br>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.<br>Samsun Galaxy (Android) as well as Apple iPhones (IOS) have features to assist disabled users with a variety of accessibility features.  Such as speech to text, voice control, virtual assistants, zoom, white on black features.<br><br>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.<br>Audible for both IOS and Android, though it is not an accessibility application in itself, can lend tons of ease of use to those that are visually impaired or blind.  Though it’s just “book’s on tape”, it is very accessible from cell phones, so I think it fits.  IOS’s Siri has saved me effort and time when I am in need of a “eyes free” search or function on my phone.  I can see how Siri could also assist those with vision problems by completing actions for them.</p></li>
+				</ul>
+			</article> <!-- /Content -->
+			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /research page -->
+	
+
+	
+		
+		<section data-role="page" id="test">  <!-- test page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->
+			<article class="content-primary"> <!-- Content -->
+				<h2 class="h2Width" id="recipe-message">Test Stuff</h2>
+				<div class="instagramGrid">
+					<div>
+						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
+						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
+						<li><img src='img/camera.png' alt='Camera' class='sillyImageSize' /></li>
+					</div>
+				</div>
+			</article> <!-- /Content -->
+			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /test page page -->
 		
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>	
