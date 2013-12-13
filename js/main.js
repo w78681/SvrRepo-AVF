@@ -8,7 +8,7 @@ var instagramData = function(pictureInfo) {
 	$("#instagram-message").html("Instagram results:");
 	
 	$.each(pictureInfo.data, function (index, photo) {
-	var pictureStuff = "<li><img src='" + photo.images.standard_resolution.url + "' alt='" + photo.user.id + "' /><p>" + photo.user.full_name + ", <em>" + photo.user.username + "</em></p></li>";
+	var pictureStuff = "<li><img src='" + photo.images.standard_resolution.url + "' alt='" + photo.user.id + "' class='sillyImageSize' /></li>";
 	$("#instagramResults").append(pictureStuff);
 	});
 };
@@ -27,7 +27,7 @@ var foodData = function(foodInfo) {
 	$("#recipe-message").html("Recipe results:");
 	
 	$.each(foodInfo.recipes, function (index, food) {
-	var recipeStuff = "<li>" + food.title + "</li><br><li><img src='" + food.image_url + "' alt='" + food.title + "' /></li>";
+	var recipeStuff = "<li><img src='" + food.image_url + "' alt='" + food.title + "' class='sillyImageSize' /></li>";
 	$("#food2ForkResults").append(recipeStuff);
 	});
 };
