@@ -59,46 +59,43 @@ function onDeviceReady() {
 }
 //camera
 function cameraSuccess(imageData) {
-    navigator.notification.alert('Picture snapped!', postPhoto, 'Picture Taken!', 'OK');
-	var pictureSrc = "data:image/jpeg;base64," + imageData
-
+    navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 	function postPhoto() {
-		alert("post fired!" + pictureSrc);
-		$("#cameraPicture").attr("src", pictureSrc).reload();
+		$("#cameraPicture").attr("src", imageData).reload();
 	};
 };
 function cameraFail(message) {
-    alert('Camera failed to take a picture baecause, ' + message);
+    navigator.notification.alert('Camera failed to take a picture baecause, ' + message, null, 'Camera', 'OK');
 };
 //end camera
 //accelerometer
 function accelerationSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' + 'Acceleration Y: ' + acceleration.y + '\n' + 'Acceleration Z: ' + acceleration.z + '\n');
+    navigator.notification.alert('Acceleration X: ' + acceleration.x + '\n' + 'Acceleration Y: ' + acceleration.y + '\n' + 'Acceleration Z: ' + acceleration.z + '\n', null, 'Accelerometer', 'OK');
 	var accelerationStuff = "<li>Acceleration X: " + acceleration.x + "</li><br><li>Acceleration Y: " + acceleration.y + "</li><br><li>Acceleration Z: " + acceleration.z + "</li>";
 	$("#accelerationResults").append(accelerationStuff);		
 };
 function accelerationError() {
-    alert('Accelerometer encountered an error!');
+    navigator.notification.alert('Accelerometer encountered an error!', null, 'Accelerometer', 'OK');
 };
 //end accelerometer
 //compass
 function compassSuccess(heading) {
-	alert('Heading: ' + heading.magneticHeading);
+    navigator.notification.alert('Heading: ' + heading.magneticHeading, null, 'Compass', 'OK');
 	var compassStuff = "<li>Heading: " + heading.magneticHeading + "</li>";
 	$("#compassResults").append(compassStuff);		
 };
 function compassError(error) {
-	alert('CompassError: ' + error.code);
+    navigator.notification.alert('CompassError: ' + error.code, null, 'Compass', 'OK');
 };
 //end compass
 
 //geolocation
 function geolocationSuccess(position) {
-    alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n');
+    navigator.notification.alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n', null, 'Location', 'OK');
 	var geolocationStuff = "<li>Latitude: " + position.coords.latitude + "</li><br><li>Longitude: " + position.coords.longitude + "</li>";
 	$("#geolocationResults").append(geolocationStuff);		
 };
 function geolocationError(error) {
-        alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
 };
 //end geolocation

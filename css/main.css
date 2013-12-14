@@ -10,6 +10,16 @@ li {
 	display: inline;
 	list-style: none;
 }
+#cameraPicture {
+	width: 100%;
+	height: 100%;
+}
+@media screen and (min-device-width : 100px) and (max-device-width : 767px) {
+   .sillyImageSize{
+		position: relative;
+		width: 95%;
+   }
+}
 @media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
    .sillyImageSize{
 		position: relative;
