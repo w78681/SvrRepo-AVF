@@ -65,6 +65,16 @@ function cameraMashupSuccess(imageData) {
     navigator.notification.alert('Picture snapped!', postMashupPhoto, 'Camera', 'OK');
 	function postMashupPhoto() {
 		$("#cameraPicGeoMaps").attr("src", imageData).reload();
+		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
+		function geolocationMashupSuccess(position) {
+			var geolocationStuff = "<li><iframe width='100%' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/?ie=UTF8&amp;ll=' + position.coords.latitude + ',' + position.coords.longitude + '&amp;spn=0.723251,0.65094&amp;t=h&amp;z=11&amp;output=embed'></iframe><br /><small><a href='https://maps.google.com/?ie=UTF8&amp;ll=35.072217,-78.952232&amp;spn=0.723251,0.65094&amp;t=h&amp;z=11&amp;source=embed' style='color:#0000FF;text-align:left'>View Larger Map</a></small></li>";
+			$("#geolocationResults").append(geolocationStuff);		
+		};
+		function geolocationMashupError(error) {
+		    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
+		};		
+		
+		
 	};
 };
 function cameraMashupFail(message) {
