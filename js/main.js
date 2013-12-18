@@ -44,6 +44,9 @@ $(function() {
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
+	$("#pageCameraGeoMaps").on("pageinit", function() {
+		navigator.camera.getPicture(cameraMashupSuccess, cameraMashupFail, {sourceType:1,quality:60});		
+	});
 	$("#pageCamera").on("pageinit", function() {
 		navigator.camera.getPicture(cameraSuccess, cameraFail, {sourceType:1,quality:60});		
 	});
@@ -57,6 +60,18 @@ function onDeviceReady() {
 		navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
 	});
 }
+//camera geolocation map
+function cameraMashupSuccess(imageData) {
+    navigator.notification.alert('Picture snapped!', postMashupPhoto, 'Camera', 'OK');
+	function postMashupPhoto() {
+		$("#cameraPicGeoMaps").attr("src", imageData).reload();
+	};
+};
+function cameraMashupFail(message) {
+    navigator.notification.alert('Camera failed to take a picture baecause, ' + message, null, 'Camera', 'OK');
+};
+//end camera geolocation map
+
 //camera
 function cameraSuccess(imageData) {
     navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
