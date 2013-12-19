@@ -47,6 +47,9 @@ function onDeviceReady() {
 	$("#pageCameraGeoMaps").on("pageinit", function() {
 		navigator.camera.getPicture(cameraMashupSuccess, cameraMashupFail, {sourceType:1,quality:60});		
 	});
+	$("#pageInstagramGeo").on("pageinit", function() {
+		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
+	});
 	$("#pageCamera").on("pageinit", function() {
 		navigator.camera.getPicture(cameraSuccess, cameraFail, {sourceType:1,quality:60});		
 	});
@@ -60,21 +63,20 @@ function onDeviceReady() {
 		navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
 	});
 }
+
 //camera geolocation map
 function cameraMashupSuccess(imageData) {
     navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 	function postPhoto() {
 		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
 		$("#cameraPicResults").attr("src", imageData);
-			function geolocationMashupSuccess(position) {
-			    navigator.notification.alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n', null, 'Location', 'OK');
-				var geolocationStuff = '<li><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=' + position.coords.latitude + ',' + position.coords.longitude + '&amp;spn=0.723251,0.65094&amp;t=h&amp;z=11&amp;output=embed"></iframe><br /></li>';
-				$("#cameraGeoMapsResults").append(geolocationStuff);		
-			};
-			function geolocationMashupError(error) {
-			    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
-			};
-		
+		function geolocationMashupSuccess(position) {
+			var geolocationStuff = '<li><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=' + position.coords.latitude + ',' + position.coords.longitude + '&amp;spn=0.723251,0.65094&amp;t=h&amp;z=11&amp;output=embed"></iframe><br /></li>';
+			$("#cameraGeoMapsResults").append(geolocationStuff);		
+		};
+		function geolocationMashupError(error) {
+		    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
+		};		
 	};
 };
 function cameraMashupFail(message) {
@@ -82,6 +84,30 @@ function cameraMashupFail(message) {
 };
 //end camera geolocation map
 
+//geoinstagram mashup
+function geolocationMashupSuccess(position) {
+    navigator.notification.alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n', null, 'Location', 'OK');
+	var instagramMashupData = function(pictureMashupInfo) {
+		$("#instagramMashupMessage").html("Search Location: " + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude);
+	
+	$.each(pictureMashupInfo.data, function (index, photo) {
+		var pictureStuff = "<li><img src='" + photo.images.standard_resolution.url + "' alt='" + photo.user.id + "' class='sillyImageSize' /></li>";
+		$("#instagramMashupResults").append(pictureStuff);
+	});
+};
+$(function() {
+	var instaLat = position.coords.latitude;
+	var instaLong = position.coords.longitude;
+	var instaId = "872dc4b5f50f42e1af5505f454e12af2";
+		// mine https://api.instagram.com/v1/media/search?lat=34.99225&lng=-78.99286&client_id=872dc4b5f50f42e1af5505f454e12af2
+	var instaUrl = "https://api.instagram.com/v1/media/search?lat=" + instaLat + "&lng=" + instaLong + "&client_id=" + instaId;
+	$.getJSON(instaUrl, instagramMashupData);
+});
+};
+function geolocationMashupError(error) {
+    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
+};
+//geoinstagram mashup end
 
 //camera
 function cameraSuccess(imageData) {
@@ -94,6 +120,7 @@ function cameraFail(message) {
     navigator.notification.alert('Camera failed to take a picture baecause, ' + message, null, 'Camera', 'OK');
 };
 //end camera
+
 //accelerometer
 function accelerationSuccess(acceleration) {
     navigator.notification.alert('Acceleration X: ' + acceleration.x + '\n' + 'Acceleration Y: ' + acceleration.y + '\n' + 'Acceleration Z: ' + acceleration.z + '\n', null, 'Accelerometer', 'OK');
@@ -104,6 +131,7 @@ function accelerationError() {
     navigator.notification.alert('Accelerometer encountered an error!', null, 'Accelerometer', 'OK');
 };
 //end accelerometer
+
 //compass
 function compassSuccess(heading) {
     navigator.notification.alert('Heading: ' + heading.magneticHeading, null, 'Compass', 'OK');
