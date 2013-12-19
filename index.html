@@ -25,7 +25,7 @@
 				<h2 class="h2Space">Mash ups</h2>
 				<ul data-role="listview" class="ulWidth" id="mashupsFeaturesList">
 					<li><a href="#pageCameraGeoMaps" data-ajax="false"><h3>Camera/Geolocation/Maps</h3></a></li>
-					<li><a href="#" data-ajax="false"><img src="img/accelerometer.png" alt="Accelerometer" /><h3>Accelerometer</h3></a></li>
+					<li><a href="#pageInstagramGeo" data-ajax="false"><h3>Instamgram/Geolocation</h3></a></li>
 				</ul>	
 				<h2 class="h2Space">Native Features</h2>
 				<ul data-role="listview" class="ulWidth" id="nativeFeaturesList">
@@ -55,7 +55,7 @@
 			</footer><!-- /footer -->
 		</section>	<!-- /Main page -->	
 
-		<section data-role="page" id="pageCameraGeoMaps">  <!-- Camera page -->
+		<section data-role="page" id="pageCameraGeoMaps">  <!-- Camera Mashup page -->
 			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
 				<h1>AVF 1312 Project</h1>
 			</header>  <!-- /HeaderBar|Navigation -->
@@ -74,7 +74,27 @@
 					</ul>
 				</nav><!-- /navbar -->
 			</footer><!-- /footer -->
-		</section>	<!-- /Camera page page -->
+		</section>	<!-- /Camera Mashup page page -->
+				
+		<section data-role="page" id="pageInstagramGeo">  <!-- Instagram Geo Mashup page -->
+			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
+				<h1>AVF 1312 Project</h1>
+			</header>  <!-- /HeaderBar|Navigation -->			
+			<article class="content"> <!-- Content -->
+				<h2 class="h2Width" id="instagramMashupMessage"></h2>
+				<div class="instagramGrid">
+					<ul class="ulWidth" id="instagramMashupResults">					
+					</ul>
+				</div>
+			</article> <!-- /Content -->			
+			<footer data-role="footer" data-id="foo1" data-position="fixed" data-theme="a">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html" class="ui-btn-active ui-state-persist">Home</a></li>
+					</ul>
+				</nav><!-- /navbar -->
+			</footer><!-- /footer -->
+		</section>	<!-- /InstaGram Geo Mashup page -->		
 
 		<section data-role="page" id="pageCamera">  <!-- Camera page -->
 			<header data-role="header" data-position="fixed" data-add-back-btn="true" data-theme="a"> <!-- HeaderBar|Navigation -->
