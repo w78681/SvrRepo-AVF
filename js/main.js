@@ -42,42 +42,20 @@ $(function() {
 });
 //end food2fork api
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	$("#pageCameraGeoMaps").on("pageinit", function() {
-		navigator.camera.getPicture(cameraMashupSuccess, cameraMashupFail, {sourceType:1,quality:60});		
-	});
-	$("#pageInstagramGeo").on("pageinit", function() {
-		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
-	});
-	$("#pageCamera").on("pageinit", function() {
-		navigator.camera.getPicture(cameraSuccess, cameraFail, {sourceType:1,quality:60});		
-	});
-	$("#pageAcceleration").on("pageinit", function() {
-		navigator.accelerometer.getCurrentAcceleration(accelerationSuccess, accelerationError);
-	});
-	$("#pageCompass").on("pageinit", function() {
-		navigator.compass.getCurrentHeading(compassSuccess, compassError);
-	});	
-	$("#pageGeolocation").on("pageinit", function() {
-		navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
-	});
-}
-
 //camera geolocation map
 function cameraMashupSuccess(imageData) {
-    navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 	function postPhoto() {
-		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
-		$("#cameraPicResults").attr("src", imageData);
 		function geolocationMashupSuccess(position) {
 			var geolocationStuff = '<li><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=' + position.coords.latitude + ',' + position.coords.longitude + '&amp;spn=0.723251,0.65094&amp;t=h&amp;z=11&amp;output=embed"></iframe><br /></li>';
 			$("#cameraGeoMapsResults").append(geolocationStuff);		
 		};
 		function geolocationMashupError(error) {
 		    navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
-		};		
+		};
+		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
+		$("#cameraPicResults").attr("src", imageData);		
 	};
+    navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 };
 function cameraMashupFail(message) {
     navigator.notification.alert('Camera failed to take a picture baecause, ' + message, null, 'Camera', 'OK');
@@ -111,10 +89,10 @@ function geolocationMashupError(error) {
 
 //camera
 function cameraSuccess(imageData) {
-    navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 	function postPhoto() {
 		$("#cameraPicture").attr("src", imageData).reload();
 	};
+    navigator.notification.alert('Picture snapped!', postPhoto, 'Camera', 'OK');
 };
 function cameraFail(message) {
     navigator.notification.alert('Camera failed to take a picture baecause, ' + message, null, 'Camera', 'OK');
@@ -153,3 +131,26 @@ function geolocationError(error) {
     navigator.notification.alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n', null, 'Location', 'OK');
 };
 //end geolocation
+
+function onDeviceReady() {
+	$("#pageCameraGeoMaps").on("pageinit", function() {
+		navigator.camera.getPicture(cameraMashupSuccess, cameraMashupFail, {sourceType:1,quality:60});		
+	});
+	$("#pageInstagramGeo").on("pageinit", function() {
+		navigator.geolocation.getCurrentPosition(geolocationMashupSuccess, geolocationMashupError);
+	});
+	$("#pageCamera").on("pageinit", function() {
+		navigator.camera.getPicture(cameraSuccess, cameraFail, {sourceType:1,quality:60});		
+	});
+	$("#pageAcceleration").on("pageinit", function() {
+		navigator.accelerometer.getCurrentAcceleration(accelerationSuccess, accelerationError);
+	});
+	$("#pageCompass").on("pageinit", function() {
+		navigator.compass.getCurrentHeading(compassSuccess, compassError);
+	});	
+	$("#pageGeolocation").on("pageinit", function() {
+		navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
+	});
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+
